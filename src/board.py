@@ -1,22 +1,16 @@
-from typing import List, Dict
-import json
-import os
+from typing import Dict
 import fjson
 
-# def add_board(board_name:str, board: List[Dict[Dict]]) -> List[Dict[str,Dict[str,str]]]:
 
 def add_board(board_name:str) -> bool:
-    board = [
-        {
-            "To Do":[]
-        },
-        {
-            "Doing":[]
-        },
-        {
-            "Done":[]
-        }
-    ]
+
+    board = {
+            "To Do":{}
+        ,
+            "Doing":{}
+        ,
+            "Done":{}    
+    }
 
     fjson.ecrire_json(board, board_name)
     
@@ -44,11 +38,7 @@ def update_board(old_board_name:str) -> bool:
 def delete_board(board_name:str) -> bool:
     fjson.supprimer_json(board_name)
     print("Board supprimé !")
-    pass
+    return True
 
-def get_board(board_name:str) -> List[Dict[str,Dict[str,str]]]:
+def get_board(board_name:str) -> Dict[str,Dict[str,str]]:
     return fjson.lire_json(board_name)
-
-# def save_board(board_name:str, board: List[Dict[Dict]])->bool:
-#     #appel fonction json creation fichier pour ecraser le précédent par celui ci
-#     pass
