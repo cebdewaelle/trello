@@ -2,7 +2,7 @@ import board
 
 
 def create_colonne(board: dict, nom_colonne: str) -> dict:
-    board[nom_colonne] = []
+    board[nom_colonne] = {}
     return board
 
 
@@ -18,4 +18,5 @@ def delete_colonne(board: dict, nom_colonne: str) -> dict:
 
 def afficher_colonne(board: dict, nom_colonne: str) -> None:
     print(board.get(nom_colonne))
+
 
