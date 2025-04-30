@@ -15,3 +15,7 @@ def delete_colonne(board: dict, nom_colonne: str) -> dict:
     del board[nom_colonne]
     return board
 
+
+def afficher_colonne(board: dict, nom_colonne: str) -> None:
+    print(board.get(nom_colonne))
+
