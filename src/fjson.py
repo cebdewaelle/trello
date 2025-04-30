@@ -63,3 +63,23 @@ def renommer_json(ancien_nom_board: str, nouveau_nom_board: str) -> bool:
 
     return True
 
+
+def supprimer_json(nom_board: str) -> bool:
+    """ Fonction de suppression d'un fichier json
+
+    Args:
+        nom_board (str): nom du board à supprimer
+    """
+    fic = REPERTOIRE + nom_board + EXTENSION
+
+    if not os.path.exists(fic):
+#        print(f"Le board {nom_board} n'existe pas")
+        return True
+
+    os.remove(fic)
+    if os.path.exists(fic):
+        print(f"Erreur lors de la suppression du fichier")
+        return False
+
+    return True
+
